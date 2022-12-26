@@ -16,6 +16,8 @@
 		7188D2B429599589002106A3 /* DIKIDITestTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D2B329599589002106A3 /* DIKIDITestTaskTests.swift */; };
 		7188D2BE29599589002106A3 /* DIKIDITestTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D2BD29599589002106A3 /* DIKIDITestTaskUITests.swift */; };
 		7188D2C029599589002106A3 /* DIKIDITestTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D2BF29599589002106A3 /* DIKIDITestTaskUITestsLaunchTests.swift */; };
+		7188D2CD2959A1AE002106A3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D2CC2959A1AE002106A3 /* NetworkManager.swift */; };
+		7188D2CF2959A592002106A3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D2CE2959A592002106A3 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		7188D2B929599589002106A3 /* DIKIDITestTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIKIDITestTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7188D2BD29599589002106A3 /* DIKIDITestTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIKIDITestTaskUITests.swift; sourceTree = "<group>"; };
 		7188D2BF29599589002106A3 /* DIKIDITestTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIKIDITestTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7188D2CC2959A1AE002106A3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7188D2CE2959A592002106A3 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				7188D29F29599586002106A3 /* ContentView.swift */,
 				7188D2A129599589002106A3 /* Assets.xcassets */,
 				7188D2A629599589002106A3 /* Persistence.swift */,
+				7188D2CC2959A1AE002106A3 /* NetworkManager.swift */,
+				7188D2CE2959A592002106A3 /* DataModel.swift */,
 				7188D2A829599589002106A3 /* DIKIDITestTask.xcdatamodeld */,
 				7188D2A329599589002106A3 /* Preview Content */,
 			);
@@ -265,8 +271,10 @@
 			files = (
 				7188D2AA29599589002106A3 /* DIKIDITestTask.xcdatamodeld in Sources */,
 				7188D2A729599589002106A3 /* Persistence.swift in Sources */,
+				7188D2CD2959A1AE002106A3 /* NetworkManager.swift in Sources */,
 				7188D2A029599586002106A3 /* ContentView.swift in Sources */,
 				7188D29E29599586002106A3 /* DIKIDITestTaskApp.swift in Sources */,
+				7188D2CF2959A592002106A3 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +441,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,6 +471,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

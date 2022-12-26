@@ -37,8 +37,22 @@ struct ContentView: View {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: download) {
+                        Label("Download", systemImage: "network")
+                    }
+                }
             }
             Text("Select an item")
+        }
+    }
+    
+    private func download() {
+        NetworkManager.shared.fetchData(urlString: "https://api-beauty.test.dikidi.ru/home/info?") { result in
+            switch result {
+            case .success(let data): print(data)
+            case .failure(let error): print(error)
+            }
         }
     }
 
