@@ -31,7 +31,7 @@ struct NetworkManager {
                 }
             } else {
                 guard let error = error else { return }
-                
+                print(error)
                 completion(.failure(error))
             }
         }.resume()
