@@ -36,4 +36,10 @@ struct NetworkManager {
             }
         }.resume()
     }
+    
+    func fetchImage(urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        guard let imageData = try? Data(contentsOf: url) else { return }
+        
+    }
 }

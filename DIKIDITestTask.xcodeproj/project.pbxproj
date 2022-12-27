@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7134A5AD295B375D00B8A293 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134A5AC295B375D00B8A293 /* MainViewModel.swift */; };
 		7188D29E29599586002106A3 /* DIKIDITestTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D29D29599586002106A3 /* DIKIDITestTaskApp.swift */; };
-		7188D2A029599586002106A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D29F29599586002106A3 /* ContentView.swift */; };
+		7188D2A029599586002106A3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D29F29599586002106A3 /* MainView.swift */; };
 		7188D2A229599589002106A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7188D2A129599589002106A3 /* Assets.xcassets */; };
 		7188D2A529599589002106A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7188D2A429599589002106A3 /* Preview Assets.xcassets */; };
 		7188D2A729599589002106A3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D2A629599589002106A3 /* Persistence.swift */; };
@@ -18,6 +19,7 @@
 		7188D2C029599589002106A3 /* DIKIDITestTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D2BF29599589002106A3 /* DIKIDITestTaskUITestsLaunchTests.swift */; };
 		7188D2CD2959A1AE002106A3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D2CC2959A1AE002106A3 /* NetworkManager.swift */; };
 		7188D2CF2959A592002106A3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D2CE2959A592002106A3 /* DataModel.swift */; };
+		71DA4FEC295AE93B009C8BFC /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DA4FEB295AE93B009C8BFC /* CategoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7134A5AC295B375D00B8A293 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		7188D29A29599586002106A3 /* DIKIDITestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIKIDITestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7188D29D29599586002106A3 /* DIKIDITestTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIKIDITestTaskApp.swift; sourceTree = "<group>"; };
-		7188D29F29599586002106A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7188D29F29599586002106A3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7188D2A129599589002106A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7188D2A429599589002106A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7188D2A629599589002106A3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		7188D2BF29599589002106A3 /* DIKIDITestTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIKIDITestTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7188D2CC2959A1AE002106A3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7188D2CE2959A592002106A3 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		71DA4FEB295AE93B009C8BFC /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				7188D29D29599586002106A3 /* DIKIDITestTaskApp.swift */,
-				7188D29F29599586002106A3 /* ContentView.swift */,
+				7188D29F29599586002106A3 /* MainView.swift */,
+				7134A5AC295B375D00B8A293 /* MainViewModel.swift */,
 				7188D2A129599589002106A3 /* Assets.xcassets */,
+				71DA4FEB295AE93B009C8BFC /* CategoryCell.swift */,
 				7188D2A629599589002106A3 /* Persistence.swift */,
 				7188D2CC2959A1AE002106A3 /* NetworkManager.swift */,
 				7188D2CE2959A592002106A3 /* DataModel.swift */,
@@ -272,9 +278,11 @@
 				7188D2AA29599589002106A3 /* DIKIDITestTask.xcdatamodeld in Sources */,
 				7188D2A729599589002106A3 /* Persistence.swift in Sources */,
 				7188D2CD2959A1AE002106A3 /* NetworkManager.swift in Sources */,
-				7188D2A029599586002106A3 /* ContentView.swift in Sources */,
+				71DA4FEC295AE93B009C8BFC /* CategoryCell.swift in Sources */,
+				7188D2A029599586002106A3 /* MainView.swift in Sources */,
 				7188D29E29599586002106A3 /* DIKIDITestTaskApp.swift in Sources */,
 				7188D2CF2959A592002106A3 /* DataModel.swift in Sources */,
+				7134A5AD295B375D00B8A293 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

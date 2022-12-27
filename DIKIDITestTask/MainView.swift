@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct MainView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -19,6 +19,17 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
+                CategoryCell(
+                    link: "https://f1.test.dikidi.ru/c1/v6/2h8auht407.jpg?size=f",
+                    name: "Hello",
+                    address: "World"
+                )
+                CategoryCell(
+                    link: "https://f1.test.dikidi.ru/c1/v6/2h8auht407.jpg?size=f",
+                    name: "Hello",
+                    address: "World"
+                )
+                /*
                 ForEach(items) { item in
                     NavigationLink {
                         Text("Item at \(item.timestamp!, formatter: itemFormatter)")
@@ -27,6 +38,7 @@ struct ContentView: View {
                     }
                 }
                 .onDelete(perform: deleteItems)
+                 */
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -97,6 +109,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        MainView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
