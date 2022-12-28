@@ -26,7 +26,7 @@ struct NetworkManager {
         session.dataTask(with: urlRequest) { data, response, error in
             if let data = data, error == nil {
                 if let decodedData = try? JSONDecoder().decode(DataModel.self, from: data) {
-                    print(decodedData)
+                    //print(decodedData)
                     completion(.success(decodedData))
                 }
             } else {

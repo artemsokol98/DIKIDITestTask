@@ -8,6 +8,8 @@
 import SwiftUI
 import CoreData
 
+
+
 struct MainView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -15,19 +17,24 @@ struct MainView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    @ObservedObject private var viewModel = MainViewModel()
+    
 
     var body: some View {
+        
+         
         NavigationView {
             List {
                 CategoryCell(
-                    link: "https://f1.test.dikidi.ru/c1/v6/2h8auht407.jpg?size=f",
-                    name: "Hello",
-                    address: "World"
+                    link: ($viewModel.link.wrappedValue) ?? "Unknowned",
+                    name: (viewModel.data?.data?.blocks?.catalog?[0].name) ?? "Unknowned",
+                    address: (viewModel.data?.data?.blocks?.catalog?[0].street) ?? "Unknowned"
                 )
                 CategoryCell(
-                    link: "https://f1.test.dikidi.ru/c1/v6/2h8auht407.jpg?size=f",
-                    name: "Hello",
-                    address: "World"
+                    link: (viewModel.data?.data?.blocks?.catalog?[1].image?.origin) ?? "Unknowned",
+                    name: (viewModel.data?.data?.blocks?.catalog?[1].name) ?? "Unknowned",
+                    address: (viewModel.data?.data?.blocks?.catalog?[1].street) ?? "Unknowned"
                 )
                 /*
                 ForEach(items) { item in
@@ -50,9 +57,15 @@ struct MainView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Download", action: {
+                        viewModel.downloadingData()
+                    })
+                        
+                    /*
                     Button(action: download) {
                         Label("Download", systemImage: "network")
                     }
+                     */
                 }
             }
             Text("Select an item")
@@ -107,8 +120,10 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
+/*
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+*/

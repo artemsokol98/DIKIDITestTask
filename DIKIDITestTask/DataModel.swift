@@ -94,7 +94,7 @@ struct Blocks: Codable {
 // MARK: - Catalog
 struct Catalog: Codable {
     let id, name: String?
-    let image: Image?
+    let image: ImageData?
     let street, house: String?
     let schedule: ScheduleSwitch?
     let lat, lng: String?
@@ -116,7 +116,7 @@ struct Catalog: Codable {
         print(id)
         name = try container.decode(String?.self, forKey: .name)
         print(name)
-        image = try container.decode(Image?.self, forKey: .image)
+        image = try container.decode(ImageData?.self, forKey: .image)
         print(image)
         street = try container.decode(String?.self, forKey: .street)
         print(street)
@@ -147,7 +147,7 @@ struct Currency: Codable {
 }
 
 // MARK: - Image
-struct Image: Codable {
+struct ImageData: Codable {
     let thumb, origin: String?
 }
 /*
@@ -241,7 +241,7 @@ struct ListModel: Codable {
 // MARK: - Vip
 struct Vip: Codable {
     let id: String?
-    let image: Image?
+    let image: ImageData?
     let name: String?
     let categories: [String]?
 }
