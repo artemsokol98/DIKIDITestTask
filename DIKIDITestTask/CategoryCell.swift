@@ -8,26 +8,26 @@
 import SwiftUI
 
 struct CategoryCell: View {
-    @State var link: String
-    @State var name: String
-    @State var address: String
+    @State var link: String?
+    @State var name: String?
+    @State var address: String?
     
     var body: some View {
         HStack{
-            AsyncImage(url: URL(string: link))
+            AsyncImage(url: URL(string: link ?? ""))
                 .frame(width: 100, height: 100, alignment: .leading)
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)))
             VStack {
-                Text(name)
-                Text(address)
+                Text(name ?? "")
+                Text(address ?? "")
             }
             .frame(width: 100, height: 100, alignment: .trailing)
             
         }
     }
 }
-
+/*
 struct CategoryCell_Previews: PreviewProvider {
     static var previews: some View {
         CategoryCell(
@@ -37,5 +37,5 @@ struct CategoryCell_Previews: PreviewProvider {
         )
     }
 }
-
+*/
 

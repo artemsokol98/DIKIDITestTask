@@ -12,9 +12,10 @@ protocol MainViewModelProtocol {
 }
 
 final class MainViewModel: ObservableObject {
-    @Published var data: DataModel?
-    
+    @Published var dataModel: DataModel?
     @Published var link: String?
+    @Published var catalog: [Catalog]?
+    //@Published var 
     
     
     func downloadingData() { // completion: @escaping (Result<Void, Error>) -> Void
@@ -23,9 +24,11 @@ final class MainViewModel: ObservableObject {
                 switch result {
                 case .success(let data):
                     guard let data = data as? DataModel? else { print("error"); return }
-                    self.data = data
-                    print(self.data)
+                    self.dataModel = data
+                    //print(self.data)
                     self.link = data?.data?.blocks?.catalog?[0].image?.origin
+                    self.catalog = data?.data?.blocks?.catalog
+                    //print(self.link)
                 case .failure(let error):
                     print(error)
                 }

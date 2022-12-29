@@ -18,24 +18,28 @@ struct MainView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-    @ObservedObject private var viewModel = MainViewModel()
+    @ObservedObject var viewModel = MainViewModel()
     
 
     var body: some View {
-        
-         
+                
         NavigationView {
-            List {
+            List(viewModel.catalog ?? [Catalog](), id: \.id) { item in
+               
+                    CategoryCell(
+                        link: item.image?.origin, // .data.blocks.catalog[0].image.origin
+                        name: item.name, //data?.data?.blocks?.catalog?[0].name
+                        address: item.street
+                    )
+                
+            
+                /*
                 CategoryCell(
-                    link: ($viewModel.link.wrappedValue) ?? "Unknowned",
-                    name: (viewModel.data?.data?.blocks?.catalog?[0].name) ?? "Unknowned",
-                    address: (viewModel.data?.data?.blocks?.catalog?[0].street) ?? "Unknowned"
-                )
-                CategoryCell(
-                    link: (viewModel.data?.data?.blocks?.catalog?[1].image?.origin) ?? "Unknowned",
+                    link: $viewModel.link,
                     name: (viewModel.data?.data?.blocks?.catalog?[1].name) ?? "Unknowned",
                     address: (viewModel.data?.data?.blocks?.catalog?[1].street) ?? "Unknowned"
                 )
+                 */
                 /*
                 ForEach(items) { item in
                     NavigationLink {
@@ -127,3 +131,10 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 */
+
+extension Binding {
+     func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
+        Binding<T>(get: { self.wrappedValue ?? defaultValue }, set: { self.wrappedValue = $0 })
+    }
+}
+
