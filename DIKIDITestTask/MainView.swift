@@ -11,47 +11,67 @@ import CoreData
 
 
 struct MainView: View {
+    /*
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-    
+    */
     @ObservedObject var viewModel = MainViewModel()
     
-
     var body: some View {
-                
+
         NavigationView {
-            List(viewModel.catalog ?? [Catalog](), id: \.id) { item in
-               
-                    CategoryCell(
-                        link: item.image?.origin, // .data.blocks.catalog[0].image.origin
-                        name: item.name, //data?.data?.blocks?.catalog?[0].name
-                        address: item.street
-                    )
-                
-            
-                /*
-                CategoryCell(
-                    link: $viewModel.link,
-                    name: (viewModel.data?.data?.blocks?.catalog?[1].name) ?? "Unknowned",
-                    address: (viewModel.data?.data?.blocks?.catalog?[1].street) ?? "Unknowned"
-                )
-                 */
-                /*
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+            List {     //(viewModel.catalog ?? [Catalog](), id: \.id) { item in
+                Section {
+                    AsyncImage(url: URL(string: viewModel.imageTitle ?? "")) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        Color.gray
+                    }
+                        .frame(height: 150)
+                        .listRowInsets(EdgeInsets())
+                }
+                Section("VIP") {
+                    ForEach(viewModel.vip ?? [Vip](), id: \.id) { item in
+                        VIPCell(
+                            link: item.image?.thumb,
+                            text: item.name
+                        )
                     }
                 }
-                .onDelete(perform: deleteItems)
-                 */
+                Section("Categories") {
+                    CategoryTile(arrayOfCategories: viewModel.categories)
+                }
+                Section {
+                    AsyncImage(url: URL(string: viewModel.imageExamples ?? "")) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        Color.gray
+                    }
+                        .frame(height: 150)
+                        .listRowInsets(EdgeInsets())
+                }
+                Section("Catalog") {
+                    ForEach(viewModel.catalog ?? [Catalog](), id: \.id) { item in
+                        CatalogCell(
+                            link: item.image?.origin, // .data.blocks.catalog[0].image.origin
+                            name: item.name, //data?.data?.blocks?.catalog?[0].name
+                            address: item.street
+                        )
+                    }
+                }
             }
+            .listStyle(.grouped)
             .toolbar {
+                
+                /*
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
@@ -60,6 +80,7 @@ struct MainView: View {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
+                 */
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Download", action: {
                         viewModel.downloadingData()
@@ -75,7 +96,7 @@ struct MainView: View {
             Text("Select an item")
         }
     }
-    
+    /*
     private func download() {
         NetworkManager.shared.fetchData(urlString: "https://api-beauty.test.dikidi.ru/home/info?") { result in
             switch result {
@@ -84,7 +105,8 @@ struct MainView: View {
             }
         }
     }
-
+     */
+    /*
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
@@ -115,6 +137,7 @@ struct MainView: View {
             }
         }
     }
+     */
 }
 
 private let itemFormatter: DateFormatter = {
@@ -138,3 +161,20 @@ extension Binding {
     }
 }
 
+/*
+CategoryCell(
+    link: $viewModel.link,
+    name: (viewModel.data?.data?.blocks?.catalog?[1].name) ?? "Unknowned",
+    address: (viewModel.data?.data?.blocks?.catalog?[1].street) ?? "Unknowned"
+)
+ */
+/*
+ForEach(items) { item in
+    NavigationLink {
+        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+    } label: {
+        Text(item.timestamp!, formatter: itemFormatter)
+    }
+}
+.onDelete(perform: deleteItems)
+ */

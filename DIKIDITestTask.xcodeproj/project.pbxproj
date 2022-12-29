@@ -19,7 +19,10 @@
 		7188D2C029599589002106A3 /* DIKIDITestTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D2BF29599589002106A3 /* DIKIDITestTaskUITestsLaunchTests.swift */; };
 		7188D2CD2959A1AE002106A3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D2CC2959A1AE002106A3 /* NetworkManager.swift */; };
 		7188D2CF2959A592002106A3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188D2CE2959A592002106A3 /* DataModel.swift */; };
-		71DA4FEC295AE93B009C8BFC /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DA4FEB295AE93B009C8BFC /* CategoryCell.swift */; };
+		71A18FCC295E223400AC5954 /* VIPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A18FCB295E223400AC5954 /* VIPCell.swift */; };
+		71A18FCE295E444D00AC5954 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A18FCD295E444D00AC5954 /* CategoryCell.swift */; };
+		71A18FD0295E49A800AC5954 /* CategoryTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A18FCF295E49A800AC5954 /* CategoryTile.swift */; };
+		71DA4FEC295AE93B009C8BFC /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DA4FEB295AE93B009C8BFC /* CatalogCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +58,10 @@
 		7188D2BF29599589002106A3 /* DIKIDITestTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIKIDITestTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7188D2CC2959A1AE002106A3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7188D2CE2959A592002106A3 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		71DA4FEB295AE93B009C8BFC /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		71A18FCB295E223400AC5954 /* VIPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPCell.swift; sourceTree = "<group>"; };
+		71A18FCD295E444D00AC5954 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		71A18FCF295E49A800AC5954 /* CategoryTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTile.swift; sourceTree = "<group>"; };
+		71DA4FEB295AE93B009C8BFC /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +116,11 @@
 				7188D29F29599586002106A3 /* MainView.swift */,
 				7134A5AC295B375D00B8A293 /* MainViewModel.swift */,
 				7188D2A129599589002106A3 /* Assets.xcassets */,
-				71DA4FEB295AE93B009C8BFC /* CategoryCell.swift */,
+				71DA4FEB295AE93B009C8BFC /* CatalogCell.swift */,
+				71A18FCB295E223400AC5954 /* VIPCell.swift */,
 				7188D2A629599589002106A3 /* Persistence.swift */,
+				71A18FCD295E444D00AC5954 /* CategoryCell.swift */,
+				71A18FCF295E49A800AC5954 /* CategoryTile.swift */,
 				7188D2CC2959A1AE002106A3 /* NetworkManager.swift */,
 				7188D2CE2959A592002106A3 /* DataModel.swift */,
 				7188D2A829599589002106A3 /* DIKIDITestTask.xcdatamodeld */,
@@ -277,12 +286,15 @@
 			files = (
 				7188D2AA29599589002106A3 /* DIKIDITestTask.xcdatamodeld in Sources */,
 				7188D2A729599589002106A3 /* Persistence.swift in Sources */,
+				71A18FD0295E49A800AC5954 /* CategoryTile.swift in Sources */,
 				7188D2CD2959A1AE002106A3 /* NetworkManager.swift in Sources */,
-				71DA4FEC295AE93B009C8BFC /* CategoryCell.swift in Sources */,
+				71DA4FEC295AE93B009C8BFC /* CatalogCell.swift in Sources */,
+				71A18FCC295E223400AC5954 /* VIPCell.swift in Sources */,
 				7188D2A029599586002106A3 /* MainView.swift in Sources */,
 				7188D29E29599586002106A3 /* DIKIDITestTaskApp.swift in Sources */,
 				7188D2CF2959A592002106A3 /* DataModel.swift in Sources */,
 				7134A5AD295B375D00B8A293 /* MainViewModel.swift in Sources */,
+				71A18FCE295E444D00AC5954 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
