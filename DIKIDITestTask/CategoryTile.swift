@@ -15,14 +15,15 @@ struct CategoryTile: View {
                 ForEach(arrayOfCategories ?? [String](), id: \.self) { item in
                     CategoryCell(text: item)
                 }
+                .frame(maxWidth: .infinity)
             }
-            .frame(height: 150)
         }
+        .frame(height: 200)
     }
 }
 
 struct CategoryTile_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryTile()
+        CategoryTile(arrayOfCategories: ["One","Two","Three","Four","Five"])
     }
 }

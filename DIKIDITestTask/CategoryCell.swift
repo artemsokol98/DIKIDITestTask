@@ -18,9 +18,10 @@ struct CategoryCell: View {
         }
     }
 }
-
+/*
 struct CategoryCell_Previews: PreviewProvider {
     static var previews: some View {
         CategoryCell(text: "Category")
     }
 }
+*/
