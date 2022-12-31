@@ -14,19 +14,15 @@ struct NetworkManager {
     let sessionConfig = URLSessionConfiguration.default
     
     func fetchData(urlString: String, completion: @escaping (Result<Any,Error>) -> Void) {
-        //var urlBuilder = URLComponents(string: urlString)
         guard let url = URL(string: urlString) else { return }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         urlRequest.setValue("maJ9RyT4TJLt7bmvYXU7M3h4F797fUKofUf3373foN94q4peAM", forHTTPHeaderField: "authorization")
-        
         sessionConfig.timeoutIntervalForRequest = 30
         let session = URLSession(configuration: sessionConfig)
-        
         session.dataTask(with: urlRequest) { data, response, error in
             if let data = data, error == nil {
                 if let decodedData = try? JSONDecoder().decode(DataModel.self, from: data) {
-                    //print(decodedData)
                     completion(.success(decodedData))
                 }
             } else {
@@ -40,6 +36,5 @@ struct NetworkManager {
     func fetchImage(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         guard let imageData = try? Data(contentsOf: url) else { return }
-        
     }
 }

@@ -19,13 +19,12 @@ final class MainViewModel: ObservableObject {
     @Published var imageExamples: String?
     @Published var categories: [String]?
 
-    func downloadingData() { // completion: @escaping (Result<Void, Error>) -> Void
+    func downloadingData() { 
         NetworkManager.shared.fetchData(urlString: "https://api-beauty.test.dikidi.ru/home/info?") { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
                     guard let data = data as? DataModel? else { print("error"); return }
-                    
                     self.catalog = data?.data?.blocks?.catalog
                     self.vip = data?.data?.blocks?.vip
                     self.imageTitle = data?.data?.image

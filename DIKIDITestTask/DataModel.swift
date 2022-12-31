@@ -24,16 +24,6 @@ struct DataModel: Decodable {
     enum CodingKeys: String, CodingKey {
         case error, data
     }
-    /*
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container
-        print(container)
-        error = try container.decode(ErrorModel.self, forKey: .error)
-        print(error)
-        data = try container.decode(DataClass.self, forKey: .data)
-        print(data)
-    }
-     */
 }
 
 // MARK: - DataClass
@@ -150,35 +140,7 @@ struct Currency: Codable {
 struct ImageData: Codable {
     let thumb, origin: String?
 }
-/*
-enum ScheduleUnion: Codable {
-    case bool(Bool)
-    case scheduleElementArray([ScheduleElement])
 
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if let x = try? container.decode(Bool.self) {
-            self = .bool(x)
-            return
-        }
-        if let x = try? container.decode([ScheduleElement].self) {
-            self = .scheduleElementArray(x)
-            return
-        }
-        throw DecodingError.typeMismatch(ScheduleUnion.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for ScheduleUnion"))
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        switch self {
-        case .bool(let x):
-            try container.encode(x)
-        case .scheduleElementArray(let x):
-            try container.encode(x)
-        }
-    }
-}
-*/
 // MARK: - ScheduleElement
 struct ScheduleElement: Codable {
     let day, workFrom, workTo: String?
